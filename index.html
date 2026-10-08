@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🍔 Foodie</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-btn" onclick="openCart()">
+        🛒 Cart <span id="cart-count">0</span>
+    </button>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="small-title">FAST & FRESH DELIVERY</p>
+        <h1>Delicious Food<br>Delivered To You</h1>
+        <p>
+            Order your favourite food from the best restaurants
+            and get it delivered to your doorstep.
+        </p>
+
+        <a href="#menu" class="hero-btn">Order Now</a>
+    </div>
+
+    <div class="hero-image">
+        🍕
+    </div>
+</section>
+
+<section class="categories">
+    <h2>Choose Category</h2>
+
+    <div class="category-buttons">
+        <button onclick="filterFood('all')">All</button>
+        <button onclick="filterFood('pizza')">🍕 Pizza</button>
+        <button onclick="filterFood('burger')">🍔 Burger</button>
+        <button onclick="filterFood('indian')">🍛 Indian</button>
+        <button onclick="filterFood('dessert')">🍰 Dessert</button>
+    </div>
+</section>
+
+<section class="menu" id="menu">
+
+    <div class="menu-heading">
+        <div>
+            <p class="small-title">OUR MENU</p>
+            <h2>Popular Food</h2>
+        </div>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search food..."
+            onkeyup="searchFood()"
+        >
+    </div>
+
+    <div class="food-container" id="food-container"></div>
+
+</section>
+
+<section class="about" id="about">
+    <div>
+        <p class="small-title">WHY CHOOSE US</p>
+        <h2>We Deliver Happiness 🍴</h2>
+        <p>
+            Foodie provides fresh, delicious and hygienic food
+            delivered quickly to your doorstep.
+        </p>
+    </div>
+
+    <div class="features">
+        <div>
+            <span>🚀</span>
+            <h3>Fast Delivery</h3>
+            <p>Quick delivery at your doorstep.</p>
+        </div>
+
+        <div>
+            <span>🥗</span>
+            <h3>Fresh Food</h3>
+            <p>Fresh and quality ingredients.</p>
+        </div>
+
+        <div>
+            <span>💳</span>
+            <h3>Easy Payment</h3>
+            <p>Simple and secure payment.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+
+    <form onsubmit="submitForm(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <h2>🍔 Foodie</h2>
+    <p>Fresh food. Fast delivery. Happy customers.</p>
+    <p>© 2026 Foodie. All Rights Reserved.</p>
+</footer>
+
+<!-- CART -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+
+<div class="cart" id="cart">
+
+    <div class="cart-header">
+        <h2>Your Cart 🛒</h2>
+        <button onclick="closeCart()">✕</button>
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-bottom">
+        <h3>Total: ₹<span id="cart-total">0</span></h3>
+
+        <button onclick="checkout()" class="checkout-btn">
+            Checkout
+        </button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
